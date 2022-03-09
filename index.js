@@ -31,10 +31,11 @@ InputCPF.prototype.criaDigito = function(cpfParcial) {
 };
 
 InputCPF.prototype.isSequence = function() {
-    return this.cpfLimpo[0].repeat(this.cpfLimpo.length)
+    const sequence = this.cpfLimpo[0].repeat(this.cpfLimpo.length);
+    return sequence === this.cpfLimpo;
 }
 
 
-const p = new InputCPF('111.111.111.11');
-console.log(p.valida());
+const p = new InputCPF('111.111.111-11');
+console.log(p.valida() ? 'CPF válido' : 'CPF inválido');
 
